@@ -1,425 +1,590 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<title>The Careernet Group Newsletter</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
-
-<style>
-
-.elementor-33022 .elementor-element.elementor-element-9f3ab4b{background-color: #F7F9FC;}
-
-.sofia-sans-<uniquifier> {
-  font-family: "Sofia Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-
-.he-widget-label, .he-widget-value{  font-family: "Sofia Sans", sans-serif;}
-
-  .he-widget-scope {
-    /* BRAND COLORS */
-    --c-primary: #7F1084;          
-    --c-primary-dark: #005e98;    
-    --c-primary-light: #e6f1f8;   
-    --c-text-main: #1F2937;        
-    --c-text-light: #4B5563;      
-    --c-border: #E5E7EB;          
-    --c-white: #ffffff;
-    --font-main: "Sofia Sans", sans-serif;
-    --radius-md: 12px;
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
-
-  .he-widget-wrapper {
-    font-family: var(--font-main);
-    color: var(--c-text-main);
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
-    box-sizing: border-box;
-    width: 100%;
-  }
-
-  .he-widget-wrapper *, 
-  .he-widget-wrapper *::before, 
-  .he-widget-wrapper *::after {
-    box-sizing: border-box;
-  }
-
-  .he-widget-card {
-    background-color: var(--c-white);
-    border: 1px solid var(--c-border);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
-    padding: 32px;
-    display: flex;
-    flex-direction: column; 
-    gap: 24px;
-    border-top: 4px solid var(--c-primary);
-  }
-
-  .he-widget-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .he-widget-label {
-    color: var(--c-text-light);
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-    margin-top: 0;
-    line-height: 1.5;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  
-  .he-widget-label i, .he-widget-label svg {
-      color: var(--c-primary);
-      width: 16px;
-      height: 16px;
-  }
-
-  .he-widget-value {
-    color: var(--c-text-main);
-    font-weight: 700;
-    font-size: 18px; 
-    margin: 0;
-    white-space: nowrap;
-    line-height: 1.3;
-  }
-
-  .he-stat-row {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--c-text-main);
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-
-  .he-stat-row:last-child { margin-bottom: 0; }
-
-  .he-stat-row i {
-    width: 22px;
-    color: var(--c-primary);
-    font-size: 14px;
-  }
-
-  .he-btn-container { display: flex; justify-content: flex-end; }
-
-  .he-register-btn {
-    background-color: var(--c-primary);
-    color: white !important;
-    font-family: var(--font-main);
-    font-weight: 700;
-    font-size: 16px;
-    padding: 14px 40px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 117, 189, 0.3);
-    text-decoration: none !important;
-    text-align: center;
-    display: inline-block;
-    line-height: 1.5;
-  }
-
-  .he-register-btn:hover {
-    background-color: var(--c-primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 117, 189, 0.4);
-  }
-
-  @media (min-width: 992px) {
-    .he-widget-card {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0;
+<style type="text/css">
+    /* Client-specific Resets */
+    html, body {
+        margin: 0 auto !important;
+        height: 100% !important;
+        width: 100% !important;
+        background-color: #F1F5F9;
+        -webkit-text-size-adjust: 100% !important;
+        -ms-text-size-adjust: 100% !important;
     }
-    .he-widget-column { flex: 1; padding: 0 24px; }
-    .he-widget-column:first-child { padding-left: 0; }
-    .he-widget-column:last-child { padding-right: 0; flex: 0 0 auto; }
-    .he-widget-column.has-divider { border-right: 1px solid var(--c-border); }
-    .he-btn-container { justify-content: center; }
-    .he-register-btn { width: auto; min-width: 180px; }
-  }
 
-  /* =========================================
-      GLASS THEME MODAL (POPUP) STYLES
-      ========================================= */
-  .straive-modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(30, 30, 36, 0.4);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 999999;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
+    #outlook a { padding: 0; }
 
-  .straive-modal-overlay.active {
-      opacity: 1;
-      visibility: visible;
-  }
+    .ExternalClass { width: 100%; }
 
-  .straive-modal-box {
-      background: rgba(255, 255, 255, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      padding: 40px 30px;
-      max-width: 450px;
-      width: 90%;
-      text-align: center;
-      position: relative;
-      transform: translateY(20px);
-      transition: transform 0.3s ease;
-      font-family: "Sofia Sans", sans-serif;
-  }
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+        line-height: 100%;
+    }
 
-  .straive-modal-overlay.active .straive-modal-box {
-      transform: translateY(0);
-  }
+    * {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        font-family: Arial, Inter, Helvetica, sans-serif !important;
+    }
 
-  .straive-modal-close {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 28px;
-      line-height: 1;
-      color: #666;
-      cursor: pointer;
-      background: transparent;
-      border: none;
-      transition: color 0.2s ease;
-  }
+    div[style*="margin: 16px 0;"] {
+        margin: 0 !important;
+    }
 
-  .straive-modal-close:hover {
-      color: #111;
-  }
+    table,
+    td {
+        mso-table-lspace: 0pt !important;
+        mso-table-rspace: 0pt !important;
+        margin: 0;
+        padding: 0;
+    }
 
-  .straive-modal-box h3 {
-      margin-top: 0;
-      font-size: 24px !important;
-      padding: 0px !important;
-      margin: 0px !important;
-      font-weight: 800;
-      color: #000;
-      font-family: "Sofia Sans", sans-serif;
-  }
+    table {
+        border-spacing: 0 !important;
+        border-collapse: collapse !important;
+        margin: 0 auto !important;
+    }
 
-  .straive-modal-box h4 {
-      font-size: 18px !important;
-      padding: 0px !important;
-      margin-top: 10px !important;
-      margin-bottom: 20px !important;
-      font-weight: 500;
-      color: #444;
-      font-family: "Sofia Sans", sans-serif;
-  }
+    img {
+        -ms-interpolation-mode: bicubic;
+        display: block;
+        border: 0;
+        outline: none;
+        text-decoration: none;
+        width: 100% !important;
+        height: auto !important;
+    }
 
-  .straive-modal-cta {
-      display: inline-block;
-      background-color: #0075bd;
-      color: #ffffff !important;
-      text-align: center;
-      padding: 12px 35px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      box-shadow: 0 4px 10px rgba(0, 117, 189, 0.2);
-      transition: all 0.2s ease;
-      margin-top: 15px;
-  }
+    a {
+        text-decoration: none;
+        color: #008CB6;
+    }
 
-  .straive-modal-cta:hover {
-      background-color: #005e98;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0, 117, 189, 0.3);
-  }
+    /* Gmail Mobile Font-Boosting & Scaling Fixes */
+    u + #body a {
+        color: inherit;
+        text-decoration: none;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+    }
+
+    /* Mobile Responsive Styles */
+    @media screen and (max-width: 600px) {
+
+        .gmail-fix {
+            width: 100% !important;
+            min-width: 100% !important;
+        }
+
+        .main-container {
+            width: 100% !important;
+            min-width: 100% !important;
+            border-radius: 0px !important;
+        }
+
+        .mobile-padding {
+            padding-top: 28px !important;
+            padding-bottom: 28px !important;
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+        }
+
+        .responsive-column {
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            direction: ltr !important;
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+            box-sizing: border-box !important;
+        }
+
+        .mobile-stack-gap {
+            padding-top: 24px !important;
+        }
+
+        .mobile-img-wrapper {
+            padding-top: 8px !important;
+            padding-bottom: 16px !important;
+        }
+
+        img.responsive-img {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+        }
+
+        .mobile-title {
+            font-size: 22px !important;
+            line-height: 1.3 !important;
+            margin-bottom: 12px !important;
+        }
+
+        .mobile-subtitle {
+            font-size: 18px !important;
+            line-height: 1.3 !important;
+            margin-bottom: 16px !important;
+        }
+
+        .mobile-section-title {
+            font-size: 15px !important;
+            line-height: 1.35 !important;
+            margin-bottom: 16px !important;
+        }
+
+        .mobile-rec-title {
+            font-size: 15px !important;
+            line-height: 1.3 !important;
+            margin-bottom: 6px !important;
+        }
+    }
 </style>
 
-<div class="he-widget-scope">
-  <div class="he-widget-wrapper">
-    <div class="he-widget-card">
-      
-      <div class="he-widget-column has-divider">
-        <p class="he-widget-label">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            Registrations Start
-        </p>
-        <p class="he-widget-value">Sep 4, 2026</p>
-      </div>
+<center style="width: 100%; background-color: #F1F5F9; padding: 0px; margin: 0; font-family: Arial, Inter, Helvetica, sans-serif;">
 
-      <div class="he-widget-column has-divider">
-        <p class="he-widget-label">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            Registrations End
-        </p>
-        <p class="he-widget-value">Oct 6, 2026</p>      </div>
-        
-              <div class="he-widget-column has-divider">
-        <p class="he-widget-value">
-            <i class="fa-solid fa-location-dot" style="color:#7F1084"></i>&nbsp; 
-            Hilton, EGL, Bengaluru
-        </p>
-        <p class="he-widget-value"><i class="fa-solid fa-calendar-days" style="color:#7F1084"></i>&nbsp; Oct 9, 2026</p>      </div>
-
-      <div class="he-widget-column has-divider" id="statsStrip">
-         <div class="he-stat-row"><i class="fa fa-spinner fa-spin"></i> Loading...</div>
-      </div>
-
-      <div class="he-widget-column">
-        <div class="he-btn-container">
-          <!-- TODO: replace with the real Wayfair AI Nexus 2026 registration URL — this currently points to a leftover 15-Day Practice Challenge apply flow (event=282876&job=296902) -->
-          <a href="https://mycareernet.co/v2/registration/mycareernet/WayfairAINexus2026/apply?event=284850&job=298810" target="_blank" class="he-register-btn registrationLink">Register Now</a>
-        </div>
-      </div>
-
+    <!-- PREHEADER TEXT -->
+    <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; padding: 0px;">
+        Because the world needs great talent®, we make it happen. Capability is doing the work scale used to: in GCCs, in hiring engines, and beyond.
     </div>
-  </div>
-</div>
 
-<div id="straiveGlassModal" class="straive-modal-overlay">
-    <div class="straive-modal-box">
-        <button id="straiveCloseModal" class="straive-modal-close">&times;</button>
-        <h3>This event has closed</h3>
-        <h4>Stay updated on upcoming events.</h4>
-        <!-- TODO: confirm this "Get Notified" link is correct for Wayfair AI Nexus — it currently points to a generic closed-events inquiry flow (ClsdEvntsInq33, event=237194&job=251382) that looks inherited from another event -->
-        <a href="https://ams.hirepro.in/v2/registration/mycareernet/ClsdEvntsInq33/apply?event=237194&job=251382" target="_blank" class="straive-modal-cta">
-            Get Notified
-        </a>
-    </div>
-</div>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#F1F5F9" class="gmail-fix" style="background-color: #F1F5F9; padding: 0px; margin: 0; width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+        <tbody>
+            <tr>
+                <td align="center" bgcolor="#F1F5F9" style="padding: 0px; margin: 0; background-color: #F1F5F9;">
 
-<script>
-    async function getStats() {
-      const oAuthIntegrationGuid = "13ecc50141f241729811505e732a4555";
-      const oAuthClientId = "ffc8f9d0-73ed-40d7-952d-b3b21dd136cd";
-      const baseDomain = "https://mycareernet.co";
+                    <!-- MAIN CONTAINER -->
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center" bgcolor="#FFFFFF" class="main-container" style="width: 600px; max-width: 600px; margin: 0 auto; background-color: #FFFFFF; border-radius: 12px; overflow: hidden; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 
-      async function getTokenData() {
-        const cachedKey = window.btoa(`${window.location.pathname}_access_token`);
-        try {
-          const cached = JSON.parse(sessionStorage.getItem(cachedKey));
-          if (!cached || (parseInt(new Date().getTime() / 1000) + 10 - cached.createdAt > cached.expires_in)) {
-              throw new Error("Token expired");
-          }
-          return cached;
-        } catch (e) {
-          const res = await fetch(`${baseDomain}/py/oauth2/${oAuthIntegrationGuid}/access_token/`, {
-            "headers": { "accept": "application/json", "app-name": "hackathon", "x-applma": "true" },
-            "body": JSON.stringify({ "client_id": oAuthClientId }),
-            "method": "POST"
-          });
-          const info = await res.json();
-          if (info.access_token) {
-            info['createdAt'] = parseInt(new Date().getTime() / 1000);
-            sessionStorage.setItem(cachedKey, JSON.stringify(info));
-            return info;
-          }
-          throw new Error("Token failed");
-        }
-      }
+                        <!-- HERO BANNER -->
+                        <tbody>
+                            <tr>
+                                <td bgcolor="#FFFFFF" style="background-color: #FFFFFF; padding: 0px; margin: 0;" align="center">
+                                    <a href="https://careernet.in/" target="_blank" rel="noopener noreferrer" style="display: block;">
+                                        <img src="https://mycareernet.co/events/wp-content/uploads/2026/10/careernet-group-banner.png"
+                                             width="600"
+                                             alt="The Careernet Group Newsletter"
+                                             class="responsive-img"
+                                             style="width: 100%; max-width: 600px; height: auto !important; display: block; border: 0;">
+                                    </a>
+                                </td>
+                            </tr>
 
-      try {
-        const token = await getTokenData();
-        const pathParts = window.location.pathname.split('/');
-        let slug = pathParts.length > 2 ? pathParts.slice(2).join('') : ''; 
-        
-        if(!slug) throw new Error("No slug");
+                            <!-- INTRO SECTION -->
+                            <tr>
+                                <td bgcolor="#FFFFFF" class="mobile-padding" style="padding: 36px 24px 20px 24px; background-color: #FFFFFF;" align="center">
 
-        const res = await fetch(`${baseDomain}/py/crpo/marketing_event/candidate/api/v1/getBySlug/`, {
-          "headers": { "app-name": "hackathon", "authorization": `${token.token_type} ${token.access_token}`, "x-applma": "true" },
-          "body": JSON.stringify({ "slug": slug }),
-          "method": "POST"
-        });
-        
-        const json = await res.json();
-        const views = json?.data?.entitySummary?.currentCount?.toLocaleString() || "0";
-        const regs = json?.data?.marketingEvent?.applicantSummary?.registered?.toLocaleString() || "0";
+                                    <h1 class="mobile-title" style="margin: 0 0 16px 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 24px; line-height: 32px; mso-line-height-rule: exactly; color: #06325E; font-weight: bold; text-align: center;">
+                                        Because the world needs great talent<sup>®</sup>,<br>
+                                        we make it happen.
+                                    </h1>
 
-        document.getElementById("statsStrip").innerHTML = `
-          <div class="he-stat-row"><i class="fa fa-regular fa-eye"></i> ${views} Views</div>
-          <div class="he-stat-row"><i class="fa fa-solid fa-user-check"></i> ${regs} Registrations</div>
-        `;
-      } catch (error) {
-        document.getElementById("statsStrip").innerHTML = `
-          <div class="he-stat-row" style="color:var(--c-text-light); font-size:13px;">
-            <i class="fa-solid fa-circle-exclamation"></i> Stats unavailable
-          </div>
-        `;
-      }
-    }
-    getStats();
+                                    <p style="margin: 0 0 16px 0; font-family: Arial, Inter, Helvetica, sans-serif; text-align: center; font-size: 14px; line-height: 22px; mso-line-height-rule: exactly; color: #000000;">
+                                        Capability is doing the work scale used to: in GCCs, in hiring engines, and in the rooms where talent decisions get made. Here is what that shift changes for your next strategy.
+                                    </p>
 
-    /* --- DATE-BASED MODAL CONTROL LOGIC --- */
-    document.addEventListener("DOMContentLoaded", function () {
-        const glassModal = document.getElementById("straiveGlassModal");
-        const closeGlassModalBtn = document.getElementById("straiveCloseModal");
-        const registerLinks = document.querySelectorAll(".registrationLink");
+                                </td>
+                            </tr>
 
-        // Cutoff Date: aligned with "Registrations End" (Oct 5, 2026 23:59:59 IST) shown above,
-        // instead of the old Aug 31, 2026 date which was already in the past and fired the
-        // "event closed" popup on every visit.
-      const closureDate = new Date("2026-10-06T19:00:00+05:30");
-        const currentDate = new Date();
+                            <!-- THIS MONTH'S HIGHLIGHT -->
+                            <tr>
+                                <td bgcolor="#06325E" class="mobile-padding" style="padding: 32px 24px 36px 24px; background-color: #06325E;" align="center">
 
-        const isEventClosed = currentDate >= closureDate;
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#06325E" style="background-color: #06325E; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                        <tbody>
 
-        function openGlassModal(e) {
-            if (e) e.preventDefault();
-            if (glassModal) {
-                glassModal.classList.add("active");
-                document.body.style.overflow = 'hidden';
-            }
-        }
+                                            <tr>
+                                                <td align="center" bgcolor="#06325E" style="padding-bottom: 16px;">
+                                                    <p style="margin: 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 12px; line-height: 16px; mso-line-height-rule: exactly; font-weight: bold; color: #f3b72c; text-transform: uppercase; text-align: center; letter-spacing: 0.5px;">
+                                                        THIS MONTH'S HIGHLIGHT
+                                                    </p>
+                                                </td>
+                                            </tr>
 
-        function closeGlassModal() {
-            if (glassModal) {
-                glassModal.classList.remove("active");
-                document.body.style.overflow = '';
-            }
-        }
+                                            <tr>
+                                                <td align="center" bgcolor="#06325E" style="padding-bottom: 16px;">
+                                                    <h2 class="mobile-subtitle" style="margin: 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 22px; line-height: 30px; mso-line-height-rule: exactly; color: #FFFFFF; font-weight: bold; text-align: center;">
+                                                        The definitive report on India's GCC ecosystem
+                                                    </h2>
+                                                </td>
+                                            </tr>
 
-        if (glassModal && closeGlassModalBtn) {
-            // Close button handlers
-            closeGlassModalBtn.addEventListener("click", closeGlassModal);
-            glassModal.addEventListener("click", function (e) {
-                if (e.target === glassModal) {
-                    closeGlassModal();
-                }
-            });
+                                            <tr>
+                                                <td align="center" bgcolor="#06325E" style="padding-bottom: 16px;">
+                                                    <img src="https://mycareernet.co/events/wp-content/uploads/2026/10/The-definitive-report-on-Indias-GCC-ecosystem.png"
+                                                         width="520"
+                                                         alt="India's GCC Ecosystem Report"
+                                                         class="responsive-img"
+                                                         style="width: 100%; max-width: 520px; height: auto !important; display: block; border: 0; margin: 0 auto;">
+                                                </td>
+                                            </tr>
 
-            // Trigger popup ONLY once registrations have actually closed
-            if (isEventClosed) {
-                registerLinks.forEach(link => {
-                    link.addEventListener("click", openGlassModal);
-                });
+                                            <tr>
+                                                <td align="center" bgcolor="#06325E" style="padding-bottom: 20px;">
+                                                    <p style="margin: 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 14px; line-height: 22px; mso-line-height-rule: exactly; color: #FFFFFF; text-align: center;">
+                                                        ~2,015 GCC entities, ~2.41M professionals, ~134 new GCCs in 2025. Our newest report maps the scale, sector depth, workforce concentration, and formation trends shaping India's next GCC wave.
+                                                    </p>
+                                                </td>
+                                            </tr>
 
-                // Auto-show popup after 2s once event is officially closed
-                setTimeout(function() {
-                    openGlassModal();
-                }, 2000);
-            }
-        }
-    });
-</script>
+                                            <tr>
+                                                <td align="center" bgcolor="#06325E">
+
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: 0 auto !important; border-collapse: separate;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td bgcolor="#008CB6" align="center" style="border-radius:32px; background-color: #008CB6; padding: 12px 26px; mso-padding-alt: 12px 26px;">
+                                                                    <a href="https://careernet.in/" target="_blank" style="font-family: Arial, Inter, Helvetica, sans-serif; font-size:13px; line-height:16px; font-weight:bold; color:#FFFFFF; text-decoration:none; display: inline-block; background-color: #008CB6; text-align: center; letter-spacing: 0.3px;">
+                                                                        Get The Report
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+
+                            <!-- CUSTOMER SUCCESS STORIES -->
+                            <tr>
+                                <td bgcolor="#FFFFFF" class="mobile-padding" style="padding: 32px 24px; background-color: #FFFFFF;" align="center">
+
+                                    <p style="margin: 0 0 6px 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-weight: bold; color: #008CB6; text-transform: uppercase; text-align: center; letter-spacing: 0.5px;">
+                                        CUSTOMER SUCCESS STORIES
+                                    </p>
+
+                                    <h2 class="mobile-subtitle" style="margin: 0 0 24px 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 22px; line-height: 30px; mso-line-height-rule: exactly; color: #06325E; font-weight: bold; text-align: center;">
+                                        From insight to execution
+                                    </h2>
+
+                                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="560" bgcolor="#FFFFFF" style="width: 100%; max-width: 560px; background-color: #FFFFFF; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" align="center">
+                                        <tbody>
+                                            <tr>
+
+                                                <!-- CARD 1 -->
+                                                <td width="270" valign="top" align="left" bgcolor="#FFFFFF" class="responsive-column" style="width: 270px; background-color: #FFFFFF; padding-right: 15px;">
+
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#FFFFFF" style="background-color: #FFFFFF; border-collapse: collapse;">
+                                                        <tbody>
+
+                                                            <tr>
+                                                                <td align="left" bgcolor="#FFFFFF" style="padding-bottom: 12px; background-color: #FFFFFF;">
+
+                                                                    <img src="https://mycareernet.co/events/wp-content/uploads/2026/10/How-to-scale-to-8000-AI-interviews-with-95-accuracy.png"
+                                                                         width="252"
+                                                                         alt="AI Interview Scaling"
+                                                                         class="responsive-img"
+                                                                         style="width: 100%; max-width: 252px; height: auto !important; display: block; border: 0;">
+
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td align="left" style="padding-bottom: 6px;">
+                                                                    <h3 style="margin: 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 16px; line-height: 22px; mso-line-height-rule: exactly; color: #06325E; font-weight: bold; text-align: left;">
+                                                                        How to scale to 8,000+ AI interviews with 95%+ accuracy
+                                                                    </h3>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td align="left" style="padding-bottom: 14px;">
+                                                                    <p style="margin: 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 14px; line-height: 20px; mso-line-height-rule: exactly; color: #000000; text-align: left;">
+                                                                        A global IT services leader achieved it with HirePro across 50+ roles and 10 departments, resulting in 60–80% lower recruiter effort.
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td align="left">
+                                                                    <a href="https://hirepro.in/resources/case-studies/global-it-services-leader-scaled-tech-hiring-ai-interviews"
+                                                                       target="_blank"
+                                                                       style="font-family: Arial, Inter, Helvetica, sans-serif; font-size:13px; line-height:18px; font-weight:bold; color:#008CB6; text-decoration:none;">
+                                                                        See The Strategy →
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+
+                                                </td>
+
+                                                <!-- CARD 2 -->
+                                                <td width="270" valign="top" align="left" bgcolor="#FFFFFF" class="responsive-column mobile-stack-gap" style="width: 270px; background-color: #FFFFFF; padding-left: 15px;">
+
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#FFFFFF" style="background-color: #FFFFFF; border-collapse: collapse;">
+                                                        <tbody>
+
+                                                            <tr>
+                                                                <td align="left" bgcolor="#FFFFFF" style="padding-bottom: 12px; background-color: #FFFFFF;">
+
+                                                                    <img src="https://mycareernet.co/events/wp-content/uploads/2026/10/A-global-CX-leader-saw-a-3.3×-jump-in-remote-assessments.png"
+                                                                         width="252"
+                                                                         alt="Remote Assessments Scale"
+                                                                         class="responsive-img"
+                                                                         style="width: 100% !important; max-width: 252px; height: auto !important; display: block; border: 0;">
+
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td align="left" style="padding-bottom: 6px;">
+                                                                    <h3 style="margin: 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 16px; line-height: 22px; mso-line-height-rule: exactly; color: #06325E; font-weight: bold; text-align: left;">
+                                                                        A global CX leader saw a 3.3× jump in remote assessments
+                                                                    </h3>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td align="left" style="padding-bottom: 14px;">
+                                                                    <p style="margin: 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 14px; line-height: 20px; mso-line-height-rule: exactly; color: #000000; text-align: left;">
+                                                                        The Fortune 500 company scaled remote assessments multifold in three years, with 90%+ faster execution and 90%+ lower per-candidate assessment costs.
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td align="left">
+                                                                    <a href="https://hirepro.in/resources/case-studies/global-cx-leader-scaled-remote-hiring-ai-powered-proctoring"
+                                                                       target="_blank"
+                                                                       style="font-family: Arial, Inter, Helvetica, sans-serif; font-size:13px; line-height:18px; font-weight:bold; color:#008CB6; text-decoration:none;">
+                                                                        Read Case Study →
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+
+                            <!-- TALENT ENGAGEMENT -->
+                            <tr>
+                                <td bgcolor="#06325E" class="mobile-padding" style="padding: 32px 24px; background-color: #06325E;" align="center">
+
+                                    <p style="margin: 0 0 6px 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-weight: bold; color: #f3b72c; text-transform: uppercase; text-align: center; letter-spacing: 0.5px;">
+                                        TALENT ENGAGEMENT
+                                    </p>
+
+                                    <h2 class="mobile-subtitle" style="margin: 0 0 20px 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 22px; line-height: 30px; mso-line-height-rule: exactly; color: #FFFFFF; font-weight: bold; text-align: center;">
+                                        Grab, Wayfair, Arm, and Ensemble met the right talent
+                                    </h2>
+
+                                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="560" bgcolor="#06325E" style="width: 100%; max-width: 560px; background-color: #06325E; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" align="center">
+                                        <tbody>
+                                            <tr>
+
+                                                <td width="100%" valign="middle" align="center" bgcolor="#06325E" style="width: 100%; background-color: #06325E;">
+
+                                                    <img src="https://mycareernet.co/events/wp-content/uploads/2026/10/Grab-Wayfair-Arm-and-Ensemble-met-the-right-talent.png"
+                                                         width="520"
+                                                         alt="Talent Engagement Events"
+                                                         class="responsive-img"
+                                                         style="width: 100%; max-width: 520px; height: auto !important; display: block; border: 0; margin: 0 auto 20px auto;">
+
+                                                    <p style="margin: 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 14px; line-height: 22px; mso-line-height-rule: exactly; color: #FFFFFF; text-align: center;">
+                                                        As their Talent Engagement Partner, MyCareernet powered multiple tech events all around September and early October. From Grab AI DevX Connect’s India debut to Wayfair AI Nexus 2026 and Arm's "billion-chip AI blueprint" in Bengaluru to Ensemble Health Partners' first tech meetup in Hyderabad.
+                                                    </p>
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+
+                            <!-- LEADERSHIP IN THE NOW -->
+                            <tr>
+                                <td bgcolor="#FFFFFF" class="mobile-padding" style="padding: 32px 24px; background-color: #FFFFFF;" align="center">
+
+                                    <p style="margin: 0 0 6px 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-weight: bold; color: #008CB6; text-transform: uppercase; text-align: center; letter-spacing: 0.5px;">
+                                        LEADERSHIP IN THE NOW
+                                    </p>
+
+                                    <h2 class="mobile-subtitle" style="margin: 0 0 20px 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 22px; line-height: 30px; mso-line-height-rule: exactly; color: #06325E; font-weight: bold; text-align: center;">
+                                        All-IITs' Placement Committee weighs in on AI-powered evaluation
+                                    </h2>
+
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" align="center" bgcolor="#FFFFFF" style="background-color: #FFFFFF; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                        <tbody>
+                                            <tr>
+                                                <td align="center" bgcolor="#FFFFFF" style="background-color: #FFFFFF;">
+
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="560" style="width: 100%; max-width: 560px; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                        <tbody>
+                                                            <tr style="font-size: 0px; line-height: 0px;">
+
+                                                                <td width="4" bgcolor="#008CB6" valign="top" style="width: 4px !important; min-width: 4px !important; max-width: 4px !important; background-color: #008CB6; border-radius: 4px; padding: 0; margin: 0; font-size: 0px; line-height: 0px; height: 100%;">
+                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="4" height="100%" style="width: 4px !important; border-collapse: collapse;">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td width="4" bgcolor="#008CB6" style="width: 4px !important; background-color: #008CB6; border-radius: 4px; font-size: 0px; line-height: 0px;">&nbsp;</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+
+                                                                <td width="16" style="width: 16px !important; min-width: 16px !important; font-size: 0px; line-height: 0px;">&nbsp;</td>
+
+                                                                <td align="left" valign="top" style="font-family: Arial, Inter, Helvetica, sans-serif; font-size: 14px; line-height: 22px; mso-line-height-rule: exactly;">
+                                                                    <p style="margin: 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 14px; line-height: 22px; mso-line-height-rule: exactly; color: #000000;">
+                                                                        Last month at IIT Guwahati, India's most influential placement body explored student assessment readiness to AI-powered proctoring with us.
+                                                                    </p>
+                                                                </td>
+
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+
+                            <!-- TALENT INTELLIGENCE -->
+                            <tr>
+                                <td bgcolor="#F1F5F9" class="mobile-padding" style="padding: 32px 24px; background-color: #F1F5F9;" align="center">
+
+                                    <p style="margin: 0 0 6px 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 12px; line-height: 16px; font-weight: bold; color: #008CB6; text-transform: uppercase; text-align: center; letter-spacing: 0.5px;">
+                                        TALENT INTELLIGENCE
+                                    </p>
+
+                                    <h2 class="mobile-subtitle" style="margin: 0 0 16px 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 20px; line-height: 28px; mso-line-height-rule: exactly; text-align: center; color: #06325E; font-weight: bold;">
+                                        The AI model is 10% of the job; the other 90% is what gets candidates hired
+                                    </h2>
+
+                                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="560" bgcolor="#F1F5F9" style="width: 100%; max-width: 560px; background-color: #F1F5F9; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" align="center">
+                                        <tbody>
+                                            <tr>
+
+                                                <!-- PODCAST IMAGE COLUMN: 270PX -->
+                                                <td width="270" valign="middle" align="center" bgcolor="#F1F5F9" class="responsive-column mobile-img-wrapper" style="width: 270px; background-color: #F1F5F9; padding-right: 20px;">
+
+                                                    <img src="https://mycareernet.co/events/wp-content/uploads/2026/10/The-AI-model-is-10-is-what-gets-candidates-hired.png"
+                                                         width="270"
+                                                         alt="The AI model is 10 percent of the job"
+                                                         class="responsive-img"
+                                                         style="width: 100%; max-width: 270px; height: auto !important; display: block; border: 0; margin: 0 auto;">
+
+                                                </td>
+
+                                                <!-- TEXT COLUMN: 290PX -->
+                                                <td width="290" valign="middle" align="left" bgcolor="#F1F5F9" class="responsive-column" style="width: 290px; background-color: #F1F5F9;">
+
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                        <tbody>
+
+                                                            <tr>
+                                                                <td align="left" style="padding-bottom: 16px;">
+                                                                    <p style="margin: 0; font-family: Arial, Inter, Helvetica, sans-serif; font-size: 14px; line-height: 22px; mso-line-height-rule: exactly; color: #000000; text-align: left;">
+                                                                        ABB's Group Head of AI and Machine Learning, Parikshit Nag, breaks down why he screens candidates on what trade-offs they made and what impact they actually drove.
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td align="left">
+
+                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="left" style="margin-left: 0 !important; margin-right: auto !important; border-collapse: separate;">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td bgcolor="#06325E" align="left" style="border-radius:32px; background-color: #06325E; padding: 10px 22px; mso-padding-alt: 10px 22px;">
+                                                                                    <a href="https://careernet.in/" target="_blank" style="font-family: Arial, Inter, Helvetica, sans-serif; font-size:13px; line-height:16px; font-weight:bold; color:#FFFFFF; text-decoration:none; display: inline-block; background-color: #06325E; text-align: center;">
+                                                                                        Tune In to the Podcast
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+
+                            <!-- FOOTER -->
+                            <tr>
+                                <td bgcolor="#06325E" style="padding: 24px 20px; background-color: #06325E; border-top: 1px solid #008CB6;" align="center">
+
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#06325E" style="background-color: #06325E; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                        <tbody>
+                                            <tr>
+
+                                                <td bgcolor="#06325E" style="padding: 0 12px; background-color: #06325E;">
+                                                    <a href="https://www.linkedin.com/company/careernet-consulting/" target="_blank" style="display: block;">
+                                                        <img src="https://mycareernet.co/events/wp-content/uploads/2026/07/linkedin.png"
+                                                             width="24"
+                                                             height="24"
+                                                             alt="LinkedIn"
+                                                             style="width: 24px !important; height: 24px !important; display: block; border: 0;">
+                                                    </a>
+                                                </td>
+
+                                                <td bgcolor="#06325E" style="padding: 0 12px; background-color: #06325E;">
+                                                    <a href="https://www.youtube.com/channel/UCcZeB6yJjvS4LlL1cO3KL-g" target="_blank" style="display: block;">
+                                                        <img src="https://mycareernet.co/events/wp-content/uploads/2026/07/youtube.png"
+                                                             width="24"
+                                                             height="24"
+                                                             alt="YouTube"
+                                                             style="width: 24px !important; height: 24px !important; display: block; border: 0;">
+                                                    </a>
+                                                </td>
+
+                                                <td bgcolor="#06325E" style="padding: 0 12px; background-color: #06325E;">
+                                                    <a href="https://careernet.in/" target="_blank" style="display: block;">
+                                                        <img src="https://mycareernet.co/events/wp-content/uploads/2026/07/website.png"
+                                                             width="24"
+                                                             height="24"
+                                                             alt="Website"
+                                                             style="width: 24px !important; height: 24px !important; display: block; border: 0;">
+                                                    </a>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</center>
