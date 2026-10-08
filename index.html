@@ -1,0 +1,425 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+
+<style>
+
+.elementor-33022 .elementor-element.elementor-element-9f3ab4b{background-color: #F7F9FC;}
+
+.sofia-sans-<uniquifier> {
+  font-family: "Sofia Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.he-widget-label, .he-widget-value{  font-family: "Sofia Sans", sans-serif;}
+
+  .he-widget-scope {
+    /* BRAND COLORS */
+    --c-primary: #7F1084;          
+    --c-primary-dark: #005e98;    
+    --c-primary-light: #e6f1f8;   
+    --c-text-main: #1F2937;        
+    --c-text-light: #4B5563;      
+    --c-border: #E5E7EB;          
+    --c-white: #ffffff;
+    --font-main: "Sofia Sans", sans-serif;
+    --radius-md: 12px;
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .he-widget-wrapper {
+    font-family: var(--font-main);
+    color: var(--c-text-main);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .he-widget-wrapper *, 
+  .he-widget-wrapper *::before, 
+  .he-widget-wrapper *::after {
+    box-sizing: border-box;
+  }
+
+  .he-widget-card {
+    background-color: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 32px;
+    display: flex;
+    flex-direction: column; 
+    gap: 24px;
+    border-top: 4px solid var(--c-primary);
+  }
+
+  .he-widget-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .he-widget-label {
+    color: var(--c-text-light);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    margin-top: 0;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .he-widget-label i, .he-widget-label svg {
+      color: var(--c-primary);
+      width: 16px;
+      height: 16px;
+  }
+
+  .he-widget-value {
+    color: var(--c-text-main);
+    font-weight: 700;
+    font-size: 18px; 
+    margin: 0;
+    white-space: nowrap;
+    line-height: 1.3;
+  }
+
+  .he-stat-row {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--c-text-main);
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .he-stat-row:last-child { margin-bottom: 0; }
+
+  .he-stat-row i {
+    width: 22px;
+    color: var(--c-primary);
+    font-size: 14px;
+  }
+
+  .he-btn-container { display: flex; justify-content: flex-end; }
+
+  .he-register-btn {
+    background-color: var(--c-primary);
+    color: white !important;
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 117, 189, 0.3);
+    text-decoration: none !important;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.5;
+  }
+
+  .he-register-btn:hover {
+    background-color: var(--c-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 117, 189, 0.4);
+  }
+
+  @media (min-width: 992px) {
+    .he-widget-card {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+    }
+    .he-widget-column { flex: 1; padding: 0 24px; }
+    .he-widget-column:first-child { padding-left: 0; }
+    .he-widget-column:last-child { padding-right: 0; flex: 0 0 auto; }
+    .he-widget-column.has-divider { border-right: 1px solid var(--c-border); }
+    .he-btn-container { justify-content: center; }
+    .he-register-btn { width: auto; min-width: 180px; }
+  }
+
+  /* =========================================
+      GLASS THEME MODAL (POPUP) STYLES
+      ========================================= */
+  .straive-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(30, 30, 36, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .straive-modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+  }
+
+  .straive-modal-box {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 40px 30px;
+      max-width: 450px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+      font-family: "Sofia Sans", sans-serif;
+  }
+
+  .straive-modal-overlay.active .straive-modal-box {
+      transform: translateY(0);
+  }
+
+  .straive-modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      line-height: 1;
+      color: #666;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      transition: color 0.2s ease;
+  }
+
+  .straive-modal-close:hover {
+      color: #111;
+  }
+
+  .straive-modal-box h3 {
+      margin-top: 0;
+      font-size: 24px !important;
+      padding: 0px !important;
+      margin: 0px !important;
+      font-weight: 800;
+      color: #000;
+      font-family: "Sofia Sans", sans-serif;
+  }
+
+  .straive-modal-box h4 {
+      font-size: 18px !important;
+      padding: 0px !important;
+      margin-top: 10px !important;
+      margin-bottom: 20px !important;
+      font-weight: 500;
+      color: #444;
+      font-family: "Sofia Sans", sans-serif;
+  }
+
+  .straive-modal-cta {
+      display: inline-block;
+      background-color: #0075bd;
+      color: #ffffff !important;
+      text-align: center;
+      padding: 12px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0, 117, 189, 0.2);
+      transition: all 0.2s ease;
+      margin-top: 15px;
+  }
+
+  .straive-modal-cta:hover {
+      background-color: #005e98;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 117, 189, 0.3);
+  }
+</style>
+
+<div class="he-widget-scope">
+  <div class="he-widget-wrapper">
+    <div class="he-widget-card">
+      
+      <div class="he-widget-column has-divider">
+        <p class="he-widget-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            Registrations Start
+        </p>
+        <p class="he-widget-value">Sep 4, 2026</p>
+      </div>
+
+      <div class="he-widget-column has-divider">
+        <p class="he-widget-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            Registrations End
+        </p>
+        <p class="he-widget-value">Oct 6, 2026</p>      </div>
+        
+              <div class="he-widget-column has-divider">
+        <p class="he-widget-value">
+            <i class="fa-solid fa-location-dot" style="color:#7F1084"></i>&nbsp; 
+            Hilton, EGL, Bengaluru
+        </p>
+        <p class="he-widget-value"><i class="fa-solid fa-calendar-days" style="color:#7F1084"></i>&nbsp; Oct 9, 2026</p>      </div>
+
+      <div class="he-widget-column has-divider" id="statsStrip">
+         <div class="he-stat-row"><i class="fa fa-spinner fa-spin"></i> Loading...</div>
+      </div>
+
+      <div class="he-widget-column">
+        <div class="he-btn-container">
+          <!-- TODO: replace with the real Wayfair AI Nexus 2026 registration URL — this currently points to a leftover 15-Day Practice Challenge apply flow (event=282876&job=296902) -->
+          <a href="https://mycareernet.co/v2/registration/mycareernet/WayfairAINexus2026/apply?event=284850&job=298810" target="_blank" class="he-register-btn registrationLink">Register Now</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="straiveGlassModal" class="straive-modal-overlay">
+    <div class="straive-modal-box">
+        <button id="straiveCloseModal" class="straive-modal-close">&times;</button>
+        <h3>This event has closed</h3>
+        <h4>Stay updated on upcoming events.</h4>
+        <!-- TODO: confirm this "Get Notified" link is correct for Wayfair AI Nexus — it currently points to a generic closed-events inquiry flow (ClsdEvntsInq33, event=237194&job=251382) that looks inherited from another event -->
+        <a href="https://ams.hirepro.in/v2/registration/mycareernet/ClsdEvntsInq33/apply?event=237194&job=251382" target="_blank" class="straive-modal-cta">
+            Get Notified
+        </a>
+    </div>
+</div>
+
+<script>
+    async function getStats() {
+      const oAuthIntegrationGuid = "13ecc50141f241729811505e732a4555";
+      const oAuthClientId = "ffc8f9d0-73ed-40d7-952d-b3b21dd136cd";
+      const baseDomain = "https://mycareernet.co";
+
+      async function getTokenData() {
+        const cachedKey = window.btoa(`${window.location.pathname}_access_token`);
+        try {
+          const cached = JSON.parse(sessionStorage.getItem(cachedKey));
+          if (!cached || (parseInt(new Date().getTime() / 1000) + 10 - cached.createdAt > cached.expires_in)) {
+              throw new Error("Token expired");
+          }
+          return cached;
+        } catch (e) {
+          const res = await fetch(`${baseDomain}/py/oauth2/${oAuthIntegrationGuid}/access_token/`, {
+            "headers": { "accept": "application/json", "app-name": "hackathon", "x-applma": "true" },
+            "body": JSON.stringify({ "client_id": oAuthClientId }),
+            "method": "POST"
+          });
+          const info = await res.json();
+          if (info.access_token) {
+            info['createdAt'] = parseInt(new Date().getTime() / 1000);
+            sessionStorage.setItem(cachedKey, JSON.stringify(info));
+            return info;
+          }
+          throw new Error("Token failed");
+        }
+      }
+
+      try {
+        const token = await getTokenData();
+        const pathParts = window.location.pathname.split('/');
+        let slug = pathParts.length > 2 ? pathParts.slice(2).join('') : ''; 
+        
+        if(!slug) throw new Error("No slug");
+
+        const res = await fetch(`${baseDomain}/py/crpo/marketing_event/candidate/api/v1/getBySlug/`, {
+          "headers": { "app-name": "hackathon", "authorization": `${token.token_type} ${token.access_token}`, "x-applma": "true" },
+          "body": JSON.stringify({ "slug": slug }),
+          "method": "POST"
+        });
+        
+        const json = await res.json();
+        const views = json?.data?.entitySummary?.currentCount?.toLocaleString() || "0";
+        const regs = json?.data?.marketingEvent?.applicantSummary?.registered?.toLocaleString() || "0";
+
+        document.getElementById("statsStrip").innerHTML = `
+          <div class="he-stat-row"><i class="fa fa-regular fa-eye"></i> ${views} Views</div>
+          <div class="he-stat-row"><i class="fa fa-solid fa-user-check"></i> ${regs} Registrations</div>
+        `;
+      } catch (error) {
+        document.getElementById("statsStrip").innerHTML = `
+          <div class="he-stat-row" style="color:var(--c-text-light); font-size:13px;">
+            <i class="fa-solid fa-circle-exclamation"></i> Stats unavailable
+          </div>
+        `;
+      }
+    }
+    getStats();
+
+    /* --- DATE-BASED MODAL CONTROL LOGIC --- */
+    document.addEventListener("DOMContentLoaded", function () {
+        const glassModal = document.getElementById("straiveGlassModal");
+        const closeGlassModalBtn = document.getElementById("straiveCloseModal");
+        const registerLinks = document.querySelectorAll(".registrationLink");
+
+        // Cutoff Date: aligned with "Registrations End" (Oct 5, 2026 23:59:59 IST) shown above,
+        // instead of the old Aug 31, 2026 date which was already in the past and fired the
+        // "event closed" popup on every visit.
+      const closureDate = new Date("2026-10-06T19:00:00+05:30");
+        const currentDate = new Date();
+
+        const isEventClosed = currentDate >= closureDate;
+
+        function openGlassModal(e) {
+            if (e) e.preventDefault();
+            if (glassModal) {
+                glassModal.classList.add("active");
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeGlassModal() {
+            if (glassModal) {
+                glassModal.classList.remove("active");
+                document.body.style.overflow = '';
+            }
+        }
+
+        if (glassModal && closeGlassModalBtn) {
+            // Close button handlers
+            closeGlassModalBtn.addEventListener("click", closeGlassModal);
+            glassModal.addEventListener("click", function (e) {
+                if (e.target === glassModal) {
+                    closeGlassModal();
+                }
+            });
+
+            // Trigger popup ONLY once registrations have actually closed
+            if (isEventClosed) {
+                registerLinks.forEach(link => {
+                    link.addEventListener("click", openGlassModal);
+                });
+
+                // Auto-show popup after 2s once event is officially closed
+                setTimeout(function() {
+                    openGlassModal();
+                }, 2000);
+            }
+        }
+    });
+</script>
